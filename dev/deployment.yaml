@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-argocd-test-app-deployment
+spec:
+  template: 
+    metadata:
+      name : my-argocd-test-app
+      labels:
+        app: test-app
+    spec: 
+      containers:
+      - name: test
+        image: hello-world
+        ports: 
+          containerPort: 80
+    replicas: 2
+    selector:
+      matchLabels:
+        app: test-app
+
