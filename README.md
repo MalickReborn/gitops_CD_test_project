@@ -36,7 +36,26 @@ These steps will install some necessary objects for argo cd to run correctly
 6. we can reach to the argocd UI this way :
    `kubectl port-forward -n argocd svc/argocd-server 8080:443`
    [![Screenshot-from-2023-10-07-14-07-13.png](https://i.postimg.cc/x11rBmsM/Screenshot-from-2023-10-07-14-07-13.png)](https://postimg.cc/TpFHDKv3)
-   
+
+   To login the default username is 'admin' and to get the password :
+   `kubectl -n argocd get secret argocd-initial-admin-secret -o yaml
+    echo <encrypted-password> | base64 --decode
+   `
+7. we can acess the visual interface now to see if everything is ok:
+
+   [![Screenshot-from-2023-10-07-14-41-23.png](https://i.postimg.cc/KzQ5MK2r/Screenshot-from-2023-10-07-14-41-23.png)](https://postimg.cc/MMMRkpXv)
+
+   click into:
+
+   [![Screenshot-from-2023-10-07-14-48-43.png](https://i.postimg.cc/fRXjvqsb/Screenshot-from-2023-10-07-14-48-43.png)](https://postimg.cc/21kZkwVp)
+
+8. we can now make a small changes within the config files to check how argo cd directly update the state into the cluster
+    We will only rename the service name  to "second-service-name" and witness the result
+
+   [![Screenshot-from-2023-10-07-15-06-29.png](https://i.postimg.cc/wv8mjLbb/Screenshot-from-2023-10-07-15-06-29.png)](https://postimg.cc/qtwRmhr8)
+
+   We can see the changes made into the cluster aswell!
+
 
 
 
