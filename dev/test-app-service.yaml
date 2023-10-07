@@ -5,10 +5,10 @@ metadata:
   name: my-argocd-test-app-service
   namespace: leti
 spec:
-  type: ClusterIp
+  type: ClusterIP
   ports:
     - protocol: TCP
-      port: 8081
+      port: 8080
       targetPort: 80
   selector:
     app: test-app 

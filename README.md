@@ -30,4 +30,13 @@ These steps will install some necessary objects for argo cd to run correctly
 3. another file containing the argo cd application into the github repository
    see the argo-application.yaml 
    
-5. we deploy the argo cd deployment to make 
+5. we then allow the process to go ahead using:
+   `kubectl apply -f application.yaml` into the folder
+
+6. we can reach to the argocd UI this way :
+   `kubectl port-forward -n argocd svc/argocd-server 8080:443`
+   [![Screenshot-from-2023-10-07-14-07-13.png](https://i.postimg.cc/x11rBmsM/Screenshot-from-2023-10-07-14-07-13.png)](https://postimg.cc/TpFHDKv3)
+   
+
+
+
