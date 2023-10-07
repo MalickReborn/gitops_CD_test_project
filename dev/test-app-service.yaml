@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: second_service_name
+  name: second-service-name
   namespace: leti
 spec:
   type: ClusterIP
