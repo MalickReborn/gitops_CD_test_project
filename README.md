@@ -18,13 +18,16 @@ CoreDNS. Can be enabled for microk8s by `microk8s enable dns && microk8s stop &&
 there will be steps
 
 1. we create a repo with a folder containing the apllication configuration yaml file
-
+     You can take the app config files into the dev rfolder inside our repository. the initial container image is hello-world that e will change into nginx
+   
 2.Install Argo CD
 
 `kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable`
+[![Screenshot-from-2023-10-07-12-57-53.png](https://i.postimg.cc/yY4kV375/Screenshot-from-2023-10-07-12-57-53.png)](https://postimg.cc/6Tc9c32L)
 These steps will install some necessary objects for argo cd to run correctly
 
 3. another file containing the argo cd application into the github repository
+   see the argo-application.yaml 
    
 5. we deploy the argo cd deployment to make 
